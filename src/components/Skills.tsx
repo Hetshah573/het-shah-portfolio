@@ -4,59 +4,48 @@ import { Card, CardContent } from "@/components/ui/card";
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript", "HTML/CSS"],
-      color: "from-blue-500 to-cyan-500"
+      title: "Languages and Tools",
+      skills: ["C++", "Javascript", "HTML", "CSS", "Bash Scripting", "Python", "Hashcat", "Nmap"]
     },
     {
-      title: "Backend",
-      skills: ["Node.js", "Python", "Express.js", "REST APIs", "GraphQL", "Microservices"],
-      color: "from-green-500 to-emerald-500"
+      title: "Libraries and Frameworks",
+      skills: ["C++ STL", "NodeJS", "ExpressJS", "ReactJS", "PostMan API"]
     },
     {
-      title: "Database",
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase", "Supabase"],
-      color: "from-purple-500 to-violet-500"
+      title: "Databases",
+      skills: ["MySql", "MongoDB"]
     },
     {
-      title: "Tools & Others",
-      skills: ["Git", "Docker", "AWS", "Vercel", "Figma", "VS Code"],
-      color: "from-orange-500 to-red-500"
+      title: "Relevant Coursework",
+      skills: ["Data Structures & Algorithms", "Operating Systems", "Information and Network Security", "Digital Forensics", "Machine Learning", "OOP", "DBMS", "Cloud Computing"]
+    },
+    {
+      title: "Areas of Interest",
+      skills: ["Machine Learning", "CyberSecurity", "Competitive Programming"]
+    },
+    {
+      title: "Soft Skills",
+      skills: ["Problem Solving", "Self-learning", "Presentation"]
     }
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-16 px-6 bg-gray-50">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold text-center text-white mb-16">
-          Skills & Technologies
+        <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center border-b-2 border-gray-300 pb-2">
+          TECHNICAL SKILLS AND INTERESTS
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {skillCategories.map((category, index) => (
-            <Card 
-              key={category.title} 
-              className="bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
-            >
+            <Card key={category.title} className="border border-gray-200 shadow-sm">
               <CardContent className="p-6">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center mb-4`}>
-                  <span className="text-white font-bold text-lg">{category.title[0]}</span>
-                </div>
-                
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  {category.title}
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                  {category.title}:
                 </h3>
-                
-                <div className="space-y-2">
-                  {category.skills.map((skill) => (
-                    <div 
-                      key={skill}
-                      className="bg-white/10 px-3 py-2 rounded-full text-sm text-slate-300 hover:bg-white/20 transition-colors duration-200"
-                    >
-                      {skill}
-                    </div>
-                  ))}
-                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  {category.skills.join(", ")}
+                </p>
               </CardContent>
             </Card>
           ))}

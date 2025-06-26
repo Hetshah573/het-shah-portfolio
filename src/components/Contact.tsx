@@ -1,61 +1,90 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { Mail, Github, Linkedin, Phone, Trophy } from "lucide-react";
 
 const Contact = () => {
+  const codingProfiles = [
+    { platform: "Codeforces", rating: "Maximum Rating: 1112", handle: "hetshah573" },
+    { platform: "Codechef", rating: "2-star (Maximum rating: 1523)", handle: "hetshah573" },
+    { platform: "Hackerrank", rating: "5-Star C++", handle: "Het Shah" },
+    { platform: "Leetcode", rating: "(Maximum rating: 1645)", handle: "Hetshah573" },
+    { platform: "TryHackme", rating: "Rating: 0x9 MAGE(Top 6 percent)", handle: "" }
+  ];
+
   return (
-    <section className="py-20 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl font-bold text-center text-white mb-16">
-          Let's Connect
-        </h2>
-        
-        <Card className="bg-white/10 backdrop-blur-md border-white/20">
+    <section className="py-16 px-6 bg-white">
+      <div className="container mx-auto max-w-6xl">
+        {/* Coding Profiles Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center border-b-2 border-gray-300 pb-2">
+            CODING PROFILES
+          </h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {codingProfiles.map((profile, index) => (
+              <Card key={profile.platform} className="border border-gray-200 shadow-sm">
+                <CardContent className="p-6 text-center">
+                  <div className="flex items-center justify-center mb-3">
+                    <Trophy className="h-6 w-6 text-gray-600 mr-2" />
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {profile.platform}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-gray-700 mb-2">{profile.rating}</p>
+                  {profile.handle && (
+                    <p className="text-sm text-gray-600">Handle: {profile.handle}</p>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <Card className="border border-gray-200 shadow-sm">
           <CardContent className="p-8">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                Ready to work together?
-              </h3>
-              <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
-                I'm always open to discussing new opportunities, interesting projects, 
-                or just having a chat about technology. Feel free to reach out!
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center border-b-2 border-gray-300 pb-2">
+              CONTACT
+            </h2>
             
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="h-8 w-8 text-gray-600" />
                 </div>
-                <h4 className="text-white font-semibold mb-2">Email</h4>
-                <p className="text-slate-300 text-sm">hetshah573@gmail.com</p>
+                <p className="text-gray-700 font-medium">+91-9313002737</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Github className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="h-8 w-8 text-gray-600" />
                 </div>
-                <h4 className="text-white font-semibold mb-2">GitHub</h4>
-                <p className="text-slate-300 text-sm">@Hetshah573</p>
+                <p className="text-gray-700 font-medium">hetshah11904@gmail.com</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Linkedin className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Github className="h-8 w-8 text-gray-600" />
                 </div>
-                <h4 className="text-white font-semibold mb-2">LinkedIn</h4>
-                <p className="text-slate-300 text-sm">@hetshah573</p>
+                <p className="text-gray-700 font-medium">github.com/Hetshah573</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Linkedin className="h-8 w-8 text-gray-600" />
+                </div>
+                <p className="text-gray-700 font-medium">linkedin.com/in/hetshah573</p>
               </div>
             </div>
             
             <div className="text-center">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 hover:scale-105"
+                className="bg-gray-900 hover:bg-gray-800 text-white"
                 asChild
               >
-                <a href="mailto:hetshah573@gmail.com">
+                <a href="mailto:hetshah11904@gmail.com">
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
                 </a>
@@ -64,7 +93,7 @@ const Contact = () => {
           </CardContent>
         </Card>
         
-        <div className="text-center mt-12 text-slate-400 text-sm">
+        <div className="text-center mt-8 text-gray-500 text-sm">
           <p>© 2024 Het Shah. Built with React, TypeScript, and Tailwind CSS.</p>
         </div>
       </div>
