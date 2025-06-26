@@ -39,9 +39,9 @@ const Contact = () => {
     { 
       platform: "TryHackMe", 
       rating: "MAGE (Top 6%)", 
-      handle: "Cybersecurity Expert",
+      handle: "HETSHAH573",
       color: "from-purple-500 to-pink-500",
-      url: "https://tryhackme.com/p/Het573"
+      url: "https://tryhackme.com/p/HETSHAH573"
     }
   ];
 
