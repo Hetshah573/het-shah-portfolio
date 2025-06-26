@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Shield, Database, Brain, Globe } from "lucide-react";
+import { Github, Shield, Database, Brain, Globe } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -10,7 +10,6 @@ const Projects = () => {
       description: "Advanced cybersecurity solution using Ollama's LLM for intelligent phishing detection and email threat analysis. Implements machine learning algorithms to identify suspicious patterns and malicious content with high accuracy.",
       tech: ["Python", "Machine Learning", "Ollama LLM", "Cybersecurity", "Threat Detection"],
       github: "https://github.com/Hetshah573",
-      live: "#",
       icon: Shield,
       color: "from-red-500 to-pink-500"
     },
@@ -19,16 +18,14 @@ const Projects = () => {
       description: "Scalable RESTful API built with modern backend technologies. Features comprehensive user authentication, authorization with JWT tokens, and complete CRUD operations for contact management.",
       tech: ["Node.js", "Express.js", "MongoDB", "JWT", "REST API"],
       github: "https://github.com/Hetshah573",
-      live: "#",
       icon: Database,
       color: "from-green-500 to-emerald-500"
     },
     {
       title: "AI-Powered Wildfire Detection",
-      description: "Computer vision solution using Convolutional Neural Networks for real-time wildfire detection from satellite imagery. Deployed on Hugging Face with an intuitive web interface for emergency response teams.",
-      tech: ["CNN", "TensorFlow", "Computer Vision", "Hugging Face", "Satellite Imagery"],
+      description: "Computer vision solution using Convolutional Neural Networks for real-time wildfire detection from satellite imagery. Advanced image processing algorithms for emergency response teams.",
+      tech: ["CNN", "Computer Vision", "Python", "Image Processing", "Machine Learning"],
       github: "https://github.com/Hetshah573",
-      live: "#",
       icon: Brain,
       color: "from-orange-500 to-red-500"
     },
@@ -37,11 +34,14 @@ const Projects = () => {
       description: "Complete e-commerce solution demonstrating modern web development practices. Features dynamic inventory management, user interactions, and responsive design using the MERN stack.",
       tech: ["MongoDB", "Express.js", "React.js", "Node.js", "Full-Stack Development"],
       github: "https://github.com/Hetshah573",
-      live: "#",
       icon: Globe,
       color: "from-blue-500 to-cyan-500"
     }
   ];
+
+  const handleGitHubClick = (url: string) => {
+    window.open(url, "_blank");
+  };
 
   return (
     <section className="py-16 px-6 bg-gradient-to-br from-cyan-50 to-blue-50">
@@ -59,7 +59,7 @@ const Projects = () => {
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
-              <Card key={project.title} className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card key={project.title} className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`bg-gradient-to-r ${project.color} p-3 rounded-xl`}>
@@ -88,17 +88,14 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" className="flex-1" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        View Code
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex-1" asChild>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Live Demo
-                      </a>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex-1 cursor-pointer" 
+                      onClick={() => handleGitHubClick(project.github)}
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      View Code
                     </Button>
                   </div>
                 </CardContent>

@@ -1,8 +1,20 @@
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Download, Code, Shield } from "lucide-react";
+import { Github, Linkedin, Mail, Code, Shield } from "lucide-react";
 
 const Hero = () => {
+  const handleEmailClick = () => {
+    window.open("mailto:hetshah11904@gmail.com", "_blank");
+  };
+
+  const handleGitHubClick = () => {
+    window.open("https://github.com/Hetshah573", "_blank");
+  };
+
+  const handleLinkedInClick = () => {
+    window.open("https://linkedin.com/in/hetshah573", "_blank");
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-6 py-20">
@@ -26,28 +38,37 @@ const Hero = () => {
               Computer Science & Engineering Student
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Nirma University, Ahmedabad • CGPA: 8.62
+              Nirma University, Ahmedabad • CGPA: 8.68
             </p>
             
             {/* Social Links */}
             <div className="flex justify-center gap-4 mb-8">
-              <Button variant="outline" size="sm" className="border-blue-200 hover:bg-blue-50" asChild>
-                <a href="mailto:hetshah11904@gmail.com" target="_blank" rel="noopener noreferrer">
-                  <Mail className="h-4 w-4 mr-2" />
-                  Email
-                </a>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-blue-200 hover:bg-blue-50 cursor-pointer" 
+                onClick={handleEmailClick}
+              >
+                <Mail className="h-4 w-4 mr-2" />
+                Email
               </Button>
-              <Button variant="outline" size="sm" className="border-gray-200 hover:bg-gray-50" asChild>
-                <a href="https://github.com/Hetshah573" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4 mr-2" />
-                  GitHub
-                </a>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-gray-200 hover:bg-gray-50 cursor-pointer" 
+                onClick={handleGitHubClick}
+              >
+                <Github className="h-4 w-4 mr-2" />
+                GitHub
               </Button>
-              <Button variant="outline" size="sm" className="border-blue-200 hover:bg-blue-50" asChild>
-                <a href="https://linkedin.com/in/hetshah573" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  LinkedIn
-                </a>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="border-blue-200 hover:bg-blue-50 cursor-pointer" 
+                onClick={handleLinkedInClick}
+              >
+                <Linkedin className="h-4 w-4 mr-2" />
+                LinkedIn
               </Button>
             </div>
           </div>
@@ -66,16 +87,6 @@ const Hero = () => {
               threat detection systems, and machine learning solutions. Seeking opportunities to contribute to innovative 
               software development and security initiatives.
             </p>
-            
-            <div className="mt-8">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button>
-            </div>
           </div>
         </div>
       </div>

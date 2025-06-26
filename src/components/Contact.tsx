@@ -12,36 +12,57 @@ const Contact = () => {
       platform: "Codeforces", 
       rating: "Max Rating: 1112", 
       handle: "hetshah573",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      url: "https://codeforces.com/profile/hetshah573"
     },
     { 
       platform: "CodeChef", 
       rating: "2⭐ (Max: 1523)", 
       handle: "hetshah573",
-      color: "from-orange-500 to-red-500"
+      color: "from-orange-500 to-red-500",
+      url: "https://www.codechef.com/users/hetshah573"
     },
     { 
       platform: "HackerRank", 
       rating: "5⭐ C++", 
       handle: "Het Shah",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      url: "https://www.hackerrank.com/profile/hetshah11904"
     },
     { 
       platform: "LeetCode", 
       rating: "Max Rating: 1645", 
       handle: "Hetshah573",
-      color: "from-yellow-500 to-orange-500"
+      color: "from-yellow-500 to-orange-500",
+      url: "https://leetcode.com/u/Hetshah573/"
     },
     { 
       platform: "TryHackMe", 
       rating: "MAGE (Top 6%)", 
       handle: "Cybersecurity Expert",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      url: "https://tryhackme.com/p/Het573"
     }
   ];
 
   const handleContactClick = () => {
     setShowPhone(true);
+  };
+
+  const handleProfileClick = (url: string) => {
+    window.open(url, "_blank");
+  };
+
+  const handleEmailClick = () => {
+    window.open("mailto:hetshah11904@gmail.com", "_blank");
+  };
+
+  const handleGitHubClick = () => {
+    window.open("https://github.com/Hetshah573", "_blank");
+  };
+
+  const handleLinkedInClick = () => {
+    window.open("https://linkedin.com/in/hetshah573", "_blank");
   };
 
   return (
@@ -60,7 +81,11 @@ const Contact = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {codingProfiles.map((profile, index) => (
-              <Card key={profile.platform} className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <Card 
+                key={profile.platform} 
+                className="border-0 shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                onClick={() => handleProfileClick(profile.url)}
+              >
                 <CardContent className="p-6 text-center">
                   <div className="flex items-center justify-center mb-4">
                     <div className={`bg-gradient-to-r ${profile.color} p-3 rounded-xl`}>
@@ -91,21 +116,21 @@ const Contact = () => {
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center group">
+              <div className="text-center group cursor-pointer" onClick={handleEmailClick}>
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Mail className="h-8 w-8 text-white" />
                 </div>
                 <p className="text-gray-700 font-semibold">hetshah11904@gmail.com</p>
               </div>
               
-              <div className="text-center group">
+              <div className="text-center group cursor-pointer" onClick={handleGitHubClick}>
                 <div className="w-20 h-20 bg-gradient-to-r from-gray-700 to-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Github className="h-8 w-8 text-white" />
                 </div>
                 <p className="text-gray-700 font-semibold">github.com/Hetshah573</p>
               </div>
               
-              <div className="text-center group">
+              <div className="text-center group cursor-pointer" onClick={handleLinkedInClick}>
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Linkedin className="h-8 w-8 text-white" />
                 </div>
@@ -118,7 +143,7 @@ const Contact = () => {
                 <Button 
                   size="lg"
                   onClick={handleContactClick}
-                  className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white shadow-lg"
+                  className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white shadow-lg cursor-pointer"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   Contact Me
