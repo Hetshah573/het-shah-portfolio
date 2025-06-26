@@ -23,7 +23,7 @@ const About = () => {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        Bachelor of Technology in Computer Science Engineering
+                        B.Tech in Computer Science Engineering
                       </h3>
                       <p className="text-lg text-blue-600 font-semibold">Minor: Cybersecurity</p>
                       <p className="text-gray-600 font-medium">Nirma University, Ahmedabad</p>
@@ -57,7 +57,7 @@ const About = () => {
                     <div className="text-right">
                       <p className="text-gray-600 font-medium">2021-22</p>
                       <div className="bg-green-100 px-3 py-1 rounded-full mt-2">
-                        <p className="text-green-800 font-bold">97.43%</p>
+                        <p className="text-green-800 font-bold">97.43 </p>
                       </div>
                     </div>
                   </div>
