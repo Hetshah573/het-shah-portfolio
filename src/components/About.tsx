@@ -23,9 +23,9 @@ const About = () => {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        Bachelor of Technology in Computer Science
+                        Bachelor of Technology in Computer Science Engineering
                       </h3>
-                      <p className="text-lg text-blue-600 font-semibold">Specialization: Cybersecurity</p>
+                      <p className="text-lg text-blue-600 font-semibold">Minor: Cybersecurity</p>
                       <p className="text-gray-600 font-medium">Nirma University, Ahmedabad</p>
                     </div>
                     <div className="text-right">
