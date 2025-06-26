@@ -10,7 +10,7 @@ const Contact = () => {
   const codingProfiles = [
     { 
       platform: "Codeforces", 
-      rating: "Max Rating: 1112", 
+      rating: "Max Rating: 1113", 
       handle: "hetshah573",
       color: "from-blue-500 to-cyan-500",
       url: "https://codeforces.com/profile/hetshah573"
@@ -31,14 +31,14 @@ const Contact = () => {
     },
     { 
       platform: "LeetCode", 
-      rating: "Max Rating: 1645", 
+      rating: "Max Rating: 1685", 
       handle: "Hetshah573",
       color: "from-yellow-500 to-orange-500",
       url: "https://leetcode.com/u/Hetshah573/"
     },
     { 
       platform: "TryHackMe", 
-      rating: "MAGE (Top 6%)", 
+      rating: "0x9 MAGE (Top 6%)", 
       handle: "HETSHAH573",
       color: "from-purple-500 to-pink-500",
       url: "https://tryhackme.com/p/HETSHAH573"
